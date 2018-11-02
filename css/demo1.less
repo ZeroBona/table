@@ -1,0 +1,67 @@
+//单行省略
+.omit-word{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+//两行省略
+.omit-word-2{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.table-box{
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+//常规样式调整
+table{
+  border: 1px solid #dce2ea;
+  border-spacing: 0;
+  border-collapse: collapse;
+  thead{
+    tr{
+      th{
+        border: 1px solid #dce2ea;
+        color: #68728c;
+      }
+    }
+  }
+  tbody{
+    tr{
+      td{
+        border: 1px solid #dce2ea;
+        color: #68728c;
+        text-align: center;
+      }
+    }
+  }
+}
+//重点样式调整，除了标题列不固定宽度，其他列固定宽度
+table{
+  width: 100%;
+  table-layout: fixed;
+  thead{
+    tr{
+      th{
+        &:nth-of-type(1){
+          width: 40px;
+        }
+        &:nth-of-type(3){
+          width: 70px;
+        }
+        &:nth-of-type(4),&:nth-of-type(5){
+          width: 60px;
+        }
+      }
+    }
+  }
+}
